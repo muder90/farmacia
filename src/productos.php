@@ -16,7 +16,9 @@ if (!empty($_POST)) {
     $precio = $_POST['precio'];
 	$preciou = $_POST['preciou'];
     $cantidad = $_POST['cantidad'];
+	
 	$cantporunidad = $_POST['cantporunidad'];
+	
 	$maximo = $_POST['maximo'];
 	$minimo = $_POST['minimo'];
 	$mensual = $_POST['mensual'];
@@ -67,7 +69,7 @@ if (!empty($_POST)) {
             }
         } else 
 		{
-            $query_update = mysqli_query($conexion, "UPDATE producto SET codigo = '$codigo', descripcion = '$producto', precio= $precio,  preciou= $preciou, existencia = $cantidad, cantporunidad = '".$cantporunidad."' id_lab = '".$laboratorio ."',  id_presentacion = '". $presentacion ."' , id_tipo = '".$tipo."', vencimiento = '$vencimiento', maximo = '$maximo', minimo = '$minimo', uso = '$uso', mensual ='$mensual', fechaact='".$hoy."' WHERE codproducto = $id");
+            $query_update = mysqli_query($conexion, "UPDATE producto SET codigo = '$codigo', descripcion = '$producto', precio= $precio,  preciou= $preciou, existencia = $cantidad, cantporunidad = '".$cantporunidad."', id_lab = '".$laboratorio ."',  id_presentacion = '". $presentacion ."' , id_tipo = '".$tipo."', vencimiento = '$vencimiento', maximo = '$maximo', minimo = '$minimo', uso = '$uso', mensual ='$mensual', fechaact='".$hoy."' WHERE codproducto = $id");
             if ($query_update) {
                 $alert = '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         Producto Modificado
@@ -116,14 +118,14 @@ include_once "includes/header.php";
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <label for="precio" class=" text-dark font-weight-bold"><b>Precio</b></label>
+                                        <label for="precio" class=" text-dark font-weight-bold"><b>Precio por presentacion</b></label>
                                         <input type="text" placeholder="Ingrese precio" class="form-control" name="precio" id="precio">
                                     </div>
                                 </div>
 								
 								<div class="col-md-2">
                                     <div class="form-group">
-                                        <label for="precio" class=" text-dark font-weight-bold"><b>Precio Unidad</b></label>
+                                        <label for="precio" class=" text-dark font-weight-bold"><b>Precio Unitario</b></label>
                                         <input type="text" placeholder="Ingrese precio" class="form-control" name="preciou" id="preciou">
                                     </div>
                                 </div>
@@ -137,10 +139,12 @@ include_once "includes/header.php";
 								
 								<div class="col-md-2">
                                     <div class="form-group">
-                                        <label for="cantidad" class=" text-dark font-weight-bold"><b>Stock por unidad</b></label>
-                                        <input type="number" placeholder="Ingrese el total de unidades por medicamento" class="form-control" name="cantporunidad" id="cantporunidad">
+                                        <label for="cantidad" class=" text-dark font-weight-bold"><b>Cantidad por presentacion</b></label>
+                                        <input type="number" placeholder="Ingrese el total de unidades por presentacion" class="form-control" name="cantporunidad" id="cantporunidad">
                                     </div>
                                 </div>
+								
+							
 								
                                 <div class="col-md-4">
                                     <div class="form-group">
