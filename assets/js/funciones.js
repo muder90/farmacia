@@ -538,6 +538,7 @@ function editarProducto(id) {
             $('#laboratorio').val(datos.id_lab);
             $('#vencimiento').val(datos.vencimiento);
             $('#cantidad').val(datos.existencia);
+			$('#cantporunidad').val(datos.cantporunidad);
 			$('#maximo').val(datos.maximo);
 			$('#minimo').val(datos.minimo);
 			$('#mensual').val(datos.mensual);
